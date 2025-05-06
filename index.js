@@ -6,6 +6,11 @@ const app = express();
 const prisma = new PrismaClient();
 app.use(bodyParser.json());
 
+// BASE HOME PAGE
+app.get('/', (req, res) => {
+    res.send('Node Home');
+});
+
 // CREATE
 app.post('/items', async (req, res) => {
     const { name } = req.body;
